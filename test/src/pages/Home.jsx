@@ -29,7 +29,7 @@ export default function Home() {
                 navigate('/login')
                 console.log("nie jest");
             }
-        })
+        }) 
 
     },[])
 
