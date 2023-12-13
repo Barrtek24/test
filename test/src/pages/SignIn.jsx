@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, {useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword} from 'firebase/auth'
 import { auth } from '../config/firebase'
+import { CheckIfUserIsAuthorized, HandleSignErrors } from '../components/functionality';
 
 export default function SignIn() {
 
@@ -10,27 +11,17 @@ export default function SignIn() {
     const [password, setPassword] = useState();
     const [errorMessage, setErrorMessage] = useState();
 
+    CheckIfUserIsAuthorized();
+
+
     const onSubmitSignIn = async (e) => {
         e.preventDefault();
         await signInWithEmailAndPassword(auth,email,password)
-        .then((userCrd)=>{
-            const user = userCrd.user;
-            console.log(user);
+        .then(()=>{
             navigate("/home");
         })
         .catch((err)=>{
-            console.log(err.code);
-            switch (err.code) {
-                case "auth/missing-password":
-                    setErrorMessage("Password is missing.")
-                    break;
-                case "auth/invalid-email":
-                    setErrorMessage("Invalid email.");
-                    break;
-                default:
-                    setErrorMessage("Invalid Email or Password.")
-                    break;
-            }
+            HandleSignErrors(err.code, setErrorMessage)
         })
     }
 

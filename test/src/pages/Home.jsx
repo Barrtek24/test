@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { onAuthStateChanged, signOut} from 'firebase/auth'
+import React from 'react'
+import {signOut} from 'firebase/auth'
 import { auth } from '../config/firebase'
 import { useNavigate } from 'react-router-dom';
+import {CheckIfUserIsAuthorized} from '../components/functionality';
 
 export default function Home() {
 
     const navigate = useNavigate();
-    const [userId, setUserId] = useState();
 
     const onSubmitSignOut = async (e) => {  
         e.preventDefault();
@@ -18,26 +18,13 @@ export default function Home() {
         })
     }
 
-    useEffect(()=>{
-        onAuthStateChanged(auth,(user)=>{
-            if(user){
-                const uid = user.email;
-                console.log(uid);
-                setUserId(uid)
-                
-            }else{
-                navigate('/login')
-                console.log("nie jest");
-            }
-        }) 
-
-    },[])
+    CheckIfUserIsAuthorized();
+    
 
 
     return(
         <div className="">
-                asdasdasdasdads
-                {userId}
+                
                 <button onClick={onSubmitSignOut}>Sing Out</button>
         </div>
     )
