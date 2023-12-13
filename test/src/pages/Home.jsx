@@ -1,28 +1,28 @@
-import React from 'react'
-import {signOut} from 'firebase/auth'
-import { auth } from '../config/firebase'
-import { useNavigate } from 'react-router-dom';
-import {CheckIfUserIsAuthorized} from '../components/functionality';
-import NavBar from '../components/Home/Navbar';
+import React from "react";
+import { signOut } from "firebase/auth";
+import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
+import { CheckIfUserIsAuthorized } from "../components/functionality";
+import NavBar from "../components/Home/Navbar";
 
 export default function Home() {
-
     const navigate = useNavigate();
 
-    const onSubmitSignOut = async (e) => {  
+    const onSubmitSignOut = async (e) => {
         e.preventDefault();
         await signOut(auth)
-        .then(()=>{
-            navigate('/login');
-        }).catch(err =>{
-            console.error(err);
-        })
-    }
+            .then(() => {
+                navigate("/login");
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    };
 
-    return(
+    return (
         <div className="">
-                <NavBar />
-                <button onClick={onSubmitSignOut}>Sing Out</button>
+            <NavBar />
+            <button onClick={onSubmitSignOut}>Sing Out</button>
         </div>
-    )
+    );
 }
