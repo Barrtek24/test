@@ -8,21 +8,25 @@ import NavBar from "../components/Home/Navbar";
 export default function Home() {
     const navigate = useNavigate();
 
-    const onSubmitSignOut = async (e) => {
-        e.preventDefault();
-        await signOut(auth)
-            .then(() => {
-                navigate("/login");
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    };
+    // const onSubmitSignOut = async (e) => {
+    //     e.preventDefault();
+    //     await signOut(auth)
+    //         .then(() => {
+    //             navigate("/login");
+    //         })
+    //         .catch((err) => {
+    //             console.error(err);
+    //         });
+    // };
+
+    CheckIfUserIsAuthorized();
 
     return (
-        <div className="">
+        <div className="w-full">
             <NavBar />
-            <button onClick={onSubmitSignOut}>Sing Out</button>
+            <div className="flex items-center box-border">
+                <p>TU COŚ MOŻE KIEDYŚ BĘDZIE ALE NIE WIEM</p>
+            </div>
         </div>
     );
 }

@@ -21,9 +21,10 @@ export default function SignUp() {
             });
     };
     return (
-        <div className="">
-            <h1>Sign Up</h1>
+        <div className="flex flex-col items-center p-4 text-lg mt-60">
+            <h1 className="text-3xl font-bold ">Sign Up</h1>
             <input
+                className="m-2 rounded-xl p-2 focus:border-sky-500 outline-none border-2"
                 type="email"
                 name="email"
                 id="email"
@@ -32,6 +33,7 @@ export default function SignUp() {
                 onChange={(e) => setEmail(e.target.value)}
             />
             <input
+                className="m-2 rounded-xl p-2 focus:border-sky-500 outline-none border-2"
                 type="password"
                 name="password"
                 id="password"
@@ -39,10 +41,23 @@ export default function SignUp() {
                 required
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={onSubmitSignUp}>Sign In</button>
-            {errorMessage ? <p className="errorMessage">{errorMessage}</p> : ""}
-            <p>Already have an account? </p>
-            <NavLink to="/login">Log In</NavLink>
+            <button
+                className="border-2 rounded-xl p-2 bg-slate-400 text-black hover:border-sky-500 my-6"
+                onClick={onSubmitSignUp}
+            >
+                Sign In
+            </button>
+            {errorMessage ? (
+                <p className="text-red-600 ">{errorMessage}</p>
+            ) : (
+                ""
+            )}
+            <p>
+                Already have an account?{" "}
+                <NavLink to="/login">
+                    <span className="text-lime-500">Log In</span>
+                </NavLink>
+            </p>
         </div>
     );
 }

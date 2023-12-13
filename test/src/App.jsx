@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 
 function App() {
     return (
-        <div className="w-full h-full bg-slate-600 flex justify-center">
+        <div className="w-full h-screen bg-emerald-300 flex justify-center">
             <Router>
                 <Routes>
                     <Route path="/signup" element={<SignUp />} />
