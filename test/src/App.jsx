@@ -7,13 +7,13 @@ import Home from "./pages/Home";
 function App() {
   
   return (
-    <div className="mainContainer">
+    <div className="w-full h-full bg-slate-600 flex justify-center">
       <Router>
         <Routes>
           <Route path="/signup" element={< SignUp/>}/>
           <Route path="/login" element={< SignIn/>}/>
           <Route path="/" element={<Navigate to="/home"/>}/>
-          <Route path="/home" element={<Home />}/>
+          <Route path="/home" element={<Home/>}/>
           <Route path="*" element={<Navigate to="/home"/>}/>
         </Routes>
       </Router>

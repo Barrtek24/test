@@ -18,13 +18,13 @@ export default function SignUp() {
         e.preventDefault();
         await createUserWithEmailAndPassword(auth, email, password)
         .then(()=>{
-            navigate("/login");
+            navigate("/home");
         }).catch((err)=>{
             HandleSignErrors(err.code, setErrorMessage);
         }); 
     }
     return(
-        <div className="loginContainer">
+        <div className="">
             <h1>Sign Up</h1>
             <input type="email" name="email" id="email" placeholder='Email' required onChange={e => setEmail(e.target.value)}/>
             <input type="password" name="password" id="password" placeholder='Password' required onChange={e => setPassword(e.target.value)}/>

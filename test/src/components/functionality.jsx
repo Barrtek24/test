@@ -9,7 +9,7 @@ export function CheckIfUserIsAuthorized() {
     const navigate = useNavigate();
     useEffect(()=>{
         onAuthStateChanged(auth,(user)=>{
-            if(user){}
+            if(!user){}
                 navigate('/login');
             })
     },[navigate])

@@ -3,6 +3,7 @@ import {signOut} from 'firebase/auth'
 import { auth } from '../config/firebase'
 import { useNavigate } from 'react-router-dom';
 import {CheckIfUserIsAuthorized} from '../components/functionality';
+import NavBar from '../components/Home/Navbar';
 
 export default function Home() {
 
@@ -18,13 +19,9 @@ export default function Home() {
         })
     }
 
-    CheckIfUserIsAuthorized();
-    
-
-
     return(
         <div className="">
-                
+                <NavBar />
                 <button onClick={onSubmitSignOut}>Sing Out</button>
         </div>
     )
