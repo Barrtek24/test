@@ -24,7 +24,7 @@ export default function SignUp() {
         <div className="flex flex-col items-center p-4 text-lg mt-60">
             <h1 className="text-3xl font-bold ">Sign Up</h1>
             <input
-                className="m-2 rounded-xl p-2 focus:border-sky-500 outline-none border-2"
+                className="m-2 rounded-xl p-2 focus:border-sky-500 outline-none border-2 "
                 type="email"
                 name="email"
                 id="email"

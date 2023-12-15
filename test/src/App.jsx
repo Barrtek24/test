@@ -8,6 +8,8 @@ import {
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
+import Users from "./pages/Users";
+import Profile from "./pages/Profile";
 
 function App() {
     return (
@@ -18,6 +20,8 @@ function App() {
                     <Route path="/login" element={<SignIn />} />
                     <Route path="/" element={<Navigate to="/home" />} />
                     <Route path="/home" element={<Home />} />
+                    <Route path="/users" element={<Users />} />
+                    <Route path="/profile" element={<Profile />} />
                     <Route path="*" element={<Navigate to="/home" />} />
                 </Routes>
             </Router>
