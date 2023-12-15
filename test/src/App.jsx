@@ -10,6 +10,7 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Users from "./pages/Users";
 import Profile from "./pages/Profile";
+import Poszukiwani from "./pages/interpol/Poszukiwani";
 
 function App() {
     return (
@@ -21,11 +22,11 @@ function App() {
                     <Route path="/" element={<Navigate to="/home" />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/users" element={<Users />} />
+                    <Route path="/poszukiwani" element={<Poszukiwani />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="*" element={<Navigate to="/home" />} />
                 </Routes>
             </Router>
-            
         </div>
     );
 }

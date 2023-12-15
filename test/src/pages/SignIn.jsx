@@ -58,10 +58,12 @@ export default function SignIn() {
             ) : (
                 ""
             )}
-            <p>New to the page? <NavLink to="/signup">
-                <span className="text-lime-500">Sign Up</span>
-            </NavLink></p>
-            
+            <p>
+                New to the page?{" "}
+                <NavLink to="/signup">
+                    <span className="text-lime-500">Sign Up</span>
+                </NavLink>
+            </p>
         </div>
     );
 }
