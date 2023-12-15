@@ -8,6 +8,9 @@ import {
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
+import Users from "./pages/Users";
+import Profile from "./pages/Profile";
+import {Szymon, Goblin, Maja} from "./pages/polsl/Szymon";
 
 function App() {
     return (
@@ -16,9 +19,16 @@ function App() {
                 <Routes>
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<SignIn />} />
+                    <Route path="/users" element={<Users />} />
+                    <Route path="/profile" element={<Profile />} />
                     <Route path="/" element={<Navigate to="/home" />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="*" element={<Navigate to="/home" />} />
+                    <Route path="/szymon" element={<Szymon />} />
+                    <Route path="/maja" element={<Maja />} />
+                    <Route path="/goblin" element={<Goblin />} />
+                    {/* <Route path="/szymon" element={<Szymon />} /> */}
+
                 </Routes>
             </Router>
         </div>
