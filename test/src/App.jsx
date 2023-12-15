@@ -23,6 +23,8 @@ function App() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/" element={<Navigate to="/home" />} />
                     <Route path="/home" element={<Home />} />
+                    <Route path="/users" element={<Users />} />
+                    <Route path="/profile" element={<Profile />} />
                     <Route path="*" element={<Navigate to="/home" />} />
                     <Route path="/szymon" element={<Szymon />} />
                     <Route path="/maja" element={<Maja />} />
