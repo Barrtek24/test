@@ -5,7 +5,7 @@ import { CheckIfUserIsAuthorized } from "../components/functionality";
 export default function Profile() {
     CheckIfUserIsAuthorized();
     return (
-    <div className="w-full">
+    <div className="">
         <NavBar /> 
     </div>)
 }
