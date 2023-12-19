@@ -1,7 +1,6 @@
 import React from "react";
-// import { signOut } from "firebase/auth";
-// import { auth } from "../config/firebase";
-// import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import { CheckIfUserIsAuthorized } from "../components/functionality";
 import NavBar from "../components/Home/Navbar";
 
