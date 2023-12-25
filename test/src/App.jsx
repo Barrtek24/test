@@ -11,9 +11,13 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import Group from "./pages/interpol/Group";
 import Poszukiwani from "./pages/interpol/Poszukiwani";
 
 function App() {
+
+
+
     return (
         <div className="">
             <Router>
@@ -24,7 +28,8 @@ function App() {
                     <Route path="/home" element={<Home />} />
 
                     
-                    <Route path="/poszukiwani" element={<Poszukiwani />} />
+                    <Route path="/interpol" element={<Poszukiwani />} />
+                    <Route path="/group/:groupId" element={<Group />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="*" element={<Navigate to="/home" />} />
                 </Routes>
